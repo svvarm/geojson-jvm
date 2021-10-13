@@ -1,5 +1,4 @@
 dependencies {
-  implementation platform('com.fasterxml.jackson:jackson-bom:2.12.1')
   compileOnlyApi 'com.fasterxml.jackson.core:jackson-annotations'
 
   annotationProcessor 'org.immutables:value:2.8.8'

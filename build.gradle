@@ -21,7 +21,10 @@ subprojects {
   }
 
   dependencies {
-    testImplementation platform('org.junit:junit-bom:5.7.0')
+    // Use Spring Boot BOM to keep dependencies consistent
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.5.5')
+
+    // Use JUnit5 in all projects
     testImplementation 'org.junit.jupiter:junit-jupiter'
   }
 
