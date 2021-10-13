@@ -1,0 +1,16 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: gradle:jdk8
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: Check
+        run: gradle clean check
