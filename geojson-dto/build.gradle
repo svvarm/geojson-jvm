@@ -5,6 +5,9 @@ plugins {
 group 'io.svvarm'
 version '1.0.0-SNAPSHOT'
 
+sourceCompatibility = JavaVersion.VERSION_1_8
+compileJava.options.encoding = 'UTF-8'
+
 repositories {
   mavenCentral()
 }
