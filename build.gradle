@@ -14,16 +14,20 @@ subprojects {
   sourceCompatibility = JavaVersion.VERSION_1_8
   compileJava.options.encoding = 'UTF-8'
 
-  java {
-    withJavadocJar()
-    withSourcesJar()
+  apply plugin: 'jacoco'
+  test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport // report is always generated after tests run
   }
 
-  // use JUnit5 across all submodules
-  test.useJUnitPlatform()
   dependencies {
     testImplementation platform('org.junit:junit-bom:5.7.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+  }
+
+  java {
+    withJavadocJar()
+    withSourcesJar()
   }
 }
 
