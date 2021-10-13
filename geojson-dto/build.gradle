@@ -1,22 +1,4 @@
-plugins {
-  id 'java-library'
-}
-
-group 'io.svvarm'
-version '1.0.0-SNAPSHOT'
-
-sourceCompatibility = JavaVersion.VERSION_1_8
-compileJava.options.encoding = 'UTF-8'
-
-repositories {
-  mavenCentral()
-}
-
 dependencies {
-  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-}
-
-test {
-  useJUnitPlatform()
+  annotationProcessor 'org.immutables:value:2.8.8'
+  compileOnlyApi 'org.immutables:value:2.8.8'
 }
