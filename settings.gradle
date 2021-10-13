@@ -1,0 +1,3 @@
+rootProject.name = 'geojson-jvm'
+
+include('geojson-dto')
