@@ -28,6 +28,8 @@ subprojects {
   apply plugin: 'com.github.spotbugs'
   spotbugs.ignoreFailures = true // reported to SonarQube instead of build failures
 
+  apply plugin: 'checkstyle'
+
   dependencies {
     // Use Spring Boot BOM to keep dependencies consistent
     implementation platform('org.springframework.boot:spring-boot-dependencies:2.5.5')
@@ -46,5 +48,7 @@ sonarqube {
 
     property 'sonar.java.spotbugs.reportPaths',
         'build/reports/spotbugs/main.xml,build/reports/spotbugs/test.xml'
+    property 'sonar.java.checkstyle.reportPaths',
+        'build/reports/checkstyle/main.xml,build/reports/checkstyle/test.xml'
   }
 }
