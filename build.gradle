@@ -1,6 +1,7 @@
 plugins {
   id 'idea'
   id 'org.sonarqube' version '3.3'
+  id 'com.github.spotbugs' version '4.7.8' apply false // only needed by subprojects
 }
 
 allprojects {
@@ -24,6 +25,9 @@ subprojects {
     finalizedBy jacocoTestReport // report is always generated after tests run
   }
 
+  apply plugin: 'com.github.spotbugs'
+  spotbugs.ignoreFailures = true // reported to SonarQube instead of build failures
+
   dependencies {
     // Use Spring Boot BOM to keep dependencies consistent
     implementation platform('org.springframework.boot:spring-boot-dependencies:2.5.5')
@@ -39,5 +43,8 @@ sonarqube {
     property 'sonar.projectKey', 'geojson-jvm'
     property 'sonar.organization', 'svvarm'
     property 'sonar.host.url', 'https://sonarcloud.io'
+
+    property 'sonar.java.spotbugs.reportPaths',
+        'build/reports/spotbugs/main.xml,build/reports/spotbugs/test.xml'
   }
 }
