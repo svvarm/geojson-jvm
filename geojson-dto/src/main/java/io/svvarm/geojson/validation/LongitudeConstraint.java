@@ -31,7 +31,7 @@ import javax.validation.constraints.Min;
 @Max(180)
 public @interface LongitudeConstraint {
 
-  String message() default "must be between [-180, 180]";
+  String message() default "{io.svvarm.geojson.validation.LongitudeConstraint.message}";
 
   Class<?>[] groups() default {};
 

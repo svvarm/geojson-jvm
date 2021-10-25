@@ -31,7 +31,7 @@ import javax.validation.constraints.Min;
 @Max(90)
 public @interface LatitudeConstraint {
 
-  String message() default "must be between [-90, 90]";
+  String message() default "{io.svvarm.geojson.validation.LatitudeConstraint.message}";
 
   Class<?>[] groups() default {};
 
