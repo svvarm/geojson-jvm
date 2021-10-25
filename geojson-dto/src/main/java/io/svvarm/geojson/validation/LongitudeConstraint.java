@@ -29,9 +29,9 @@ import javax.validation.constraints.Min;
 @Constraint(validatedBy = {})
 @Min(-180)
 @Max(180)
-public @interface ValidLongitude {
+public @interface LongitudeConstraint {
 
-  String message() default "Longitude must be between [-180, 180]";
+  String message() default "must be between [-180, 180]";
 
   Class<?>[] groups() default {};
 
