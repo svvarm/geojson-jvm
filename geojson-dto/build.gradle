@@ -1,5 +1,5 @@
 dependencies {
-  annotationProcessor 'org.immutables:value:2.8.8'
+  annotationProcessor 'org.immutables:value:2.8.9-ea-1'
   compileOnly 'org.immutables:value:2.8.8'
   implementation 'com.fasterxml.jackson.core:jackson-databind'
   implementation 'jakarta.validation:jakarta.validation-api'
