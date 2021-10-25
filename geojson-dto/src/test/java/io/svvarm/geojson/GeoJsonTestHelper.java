@@ -102,4 +102,19 @@ public final class GeoJsonTestHelper {
         violations, Matchers.not(Matchers.empty()));
     return violations;
   }
+
+  /**
+   * Asserts that some constraint violations are found in the deserialized JSON.
+   *
+   * @param json  the JSON to deserialize
+   * @param klass the POJO class
+   * @param <T>   the POJO type
+   * @return set of violations
+   * @throws AssertionError if unable to deserialize or no constraint violations found
+   */
+  public static <T> Set<ConstraintViolation<T>> assertInvalid(
+      final String json,
+      final Class<T> klass) {
+    return assertInvalid(readJson(json, klass));
+  }
 }

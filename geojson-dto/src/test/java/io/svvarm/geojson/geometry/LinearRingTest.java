@@ -49,6 +49,6 @@ class LinearRingTest {
       "[[0,0],[1,1],[0,0]]"
   })
   void validate_invalid(final String json) {
-    assertInvalid(readJson(json, LinearRing.class));
+    assertInvalid(json, LinearRing.class);
   }
 }

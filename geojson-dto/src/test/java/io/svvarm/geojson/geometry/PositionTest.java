@@ -38,13 +38,8 @@ class PositionTest {
   }
 
   @Test
-  void deserialize_derivedClassWithoutAdditionalElements() {
+  void deserialize_derivedClass() {
     assertThat(readJson("[1, 0]", ImmutablePosition.class), is(SIMPLE));
-  }
-
-  @Test
-  void deserialize_derivedClassWithAdditionalElements() {
-    assertThat(readJson("[1, 0, 10, 20]", ImmutablePosition.class), is(COMPLEX));
   }
 
   @ParameterizedTest
@@ -55,12 +50,12 @@ class PositionTest {
   }
 
   @Test
-  void validate_withoutAdditionalElements() {
+  void validate_valid_withoutAdditionalElements() {
     assertValid(SIMPLE);
   }
 
   @Test
-  void validate_withAdditionalElements() {
+  void validate_valid_withAdditionalElements() {
     assertValid(COMPLEX);
   }
 
