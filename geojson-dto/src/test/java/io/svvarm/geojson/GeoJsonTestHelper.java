@@ -95,8 +95,8 @@ public final class GeoJsonTestHelper {
    * @return set of violations
    * @throws AssertionError if no constraint violations found
    */
-  public static Set<ConstraintViolation<Object>> assertInvalid(final Object object) {
-    final Set<ConstraintViolation<Object>> violations = VALIDATOR.validate(object);
+  public static <T> Set<ConstraintViolation<T>> assertInvalid(final T object) {
+    final Set<ConstraintViolation<T>> violations = VALIDATOR.validate(object);
     MatcherAssert.assertThat(
         "No constraint violations found",
         violations, Matchers.not(Matchers.empty()));

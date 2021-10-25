@@ -1,11 +1,10 @@
 dependencies {
   annotationProcessor 'org.immutables:value:2.8.8'
   compileOnly 'org.immutables:value:2.8.8'
-  compileOnly 'com.fasterxml.jackson.core:jackson-annotations'
+  implementation 'com.fasterxml.jackson.core:jackson-databind'
   implementation 'jakarta.validation:jakarta.validation-api'
 
   // validation with Jackson mappers
-  testImplementation 'com.fasterxml.jackson.core:jackson-databind'
   testRuntimeOnly 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8'
 
   // runtime test dependencies for bean validation
