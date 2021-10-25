@@ -29,9 +29,9 @@ import javax.validation.constraints.Min;
 @Constraint(validatedBy = {})
 @Min(-90)
 @Max(90)
-public @interface ValidLatitude {
+public @interface LatitudeConstraint {
 
-  String message() default "Latitude must be between [-90, 90]";
+  String message() default "must be between [-90, 90]";
 
   Class<?>[] groups() default {};
 

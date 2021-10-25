@@ -7,8 +7,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.util.StdConverter;
 import io.svvarm.geojson.geometry.Position.Parser;
 import io.svvarm.geojson.validation.GeoJsonException;
-import io.svvarm.geojson.validation.ValidLatitude;
-import io.svvarm.geojson.validation.ValidLongitude;
+import io.svvarm.geojson.validation.LatitudeConstraint;
+import io.svvarm.geojson.validation.LongitudeConstraint;
 import java.util.ArrayList;
 import java.util.List;
 import org.immutables.value.Value;
@@ -31,7 +31,7 @@ public abstract class Position {
    *
    * @return longitude
    */
-  @ValidLongitude
+  @LongitudeConstraint
   @Value.Parameter(order = 1)
   public abstract Number getLongitude();
 
@@ -40,7 +40,7 @@ public abstract class Position {
    *
    * @return latitude
    */
-  @ValidLatitude
+  @LatitudeConstraint
   @Value.Parameter(order = 2)
   public abstract Number getLatitude();
 
