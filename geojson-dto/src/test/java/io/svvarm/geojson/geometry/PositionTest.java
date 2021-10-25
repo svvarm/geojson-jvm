@@ -37,6 +37,16 @@ class PositionTest {
     assertThat(readJson("[1, 0, 10, 20]", Position.class), is(COMPLEX));
   }
 
+  @Test
+  void deserialize_derivedClassWithoutAdditionalElements() {
+    assertThat(readJson("[1, 0]", ImmutablePosition.class), is(SIMPLE));
+  }
+
+  @Test
+  void deserialize_derivedClassWithAdditionalElements() {
+    assertThat(readJson("[1, 0, 10, 20]", ImmutablePosition.class), is(COMPLEX));
+  }
+
   @ParameterizedTest
   @ValueSource(strings = {"[]", "[1]"})
   void deserialize_invalidSize(final String json) {
