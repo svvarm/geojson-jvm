@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     container: gradle:jdk11  # SonarQube plugin requires Java 11+
     steps:
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v2.4.0
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
