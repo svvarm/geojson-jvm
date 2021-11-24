@@ -1,7 +1,7 @@
 plugins {
   id 'idea'
   id 'org.sonarqube' version '3.3'
-  id 'com.github.spotbugs' version '4.7.9' apply false // only needed by subprojects
+  id 'com.github.spotbugs' version '4.8.0' apply false // only needed by subprojects
 }
 
 allprojects {
