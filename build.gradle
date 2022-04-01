@@ -32,7 +32,7 @@ subprojects {
 
   dependencies {
     // Use Spring Boot BOM to keep dependencies consistent
-    implementation platform('org.springframework.boot:spring-boot-dependencies:2.6.4')
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.6.6')
 
     // Use JUnit5 and Hamcrest in all projects
     testImplementation 'org.junit.jupiter:junit-jupiter'
